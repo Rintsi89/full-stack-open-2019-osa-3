@@ -10,6 +10,7 @@ const clearToken = () => morgan.token('type', () => "")
 clearToken()
 
 app.use(cors())
+app.use(express.static('build'))
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms :type"))
 
 app.use(bodyParser.json())
